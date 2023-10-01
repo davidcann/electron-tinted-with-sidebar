@@ -8,7 +8,7 @@ The `setWindowAnimationBehavior`` function enables you to configure a window to 
 
 [See demo code](demo) for additional styling in HTML, such as the separator lines and subtle sidebar inner shadow. Dark mode is supported through macOS System Settings or [nativeTheme.themeSource](https://www.electronjs.org/docs/latest/api/native-theme#nativethemethemesource).
 
-![Demo video](demo/demo.mov)
+https://github.com/davidcann/electron-tinted-with-sidebar/assets/23272/7cf04b0a-ed52-4931-ab1a-18184aa4c7e3
 
 ## Installing
 
