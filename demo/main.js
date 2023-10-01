@@ -16,7 +16,7 @@ function createWindow() {
 		},
 	});
 	tint.setWindowAnimationBehavior(mainWindow.getNativeWindowHandle(), true);
-	tint.setLayout(mainWindow.getNativeWindowHandle(), 200, 52);
+	tint.setWindowLayout(mainWindow.getNativeWindowHandle(), 200, 52);
 
 	mainWindow.webContents.loadFile("index.html");
 	mainWindow.setWindowButtonPosition({ x: 19, y: 18 });
@@ -26,8 +26,8 @@ function createWindow() {
 	});
 
 	mainWindow.webContents.ipc.on("toMain", (event, command, data) => {
-		if (command === "setLayout") {
-			tint.setLayout(mainWindow.getNativeWindowHandle(), data.sidebarWidth, data.titlebarHeight);
+		if (command === "setWindowLayout") {
+			tint.setWindowLayout(mainWindow.getNativeWindowHandle(), data.sidebarWidth, data.titlebarHeight);
 		} else if (command === "setNativeTheme") {
 			nativeTheme.themeSource = data.themeSource;
 		}

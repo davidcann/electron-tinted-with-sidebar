@@ -23,17 +23,17 @@
 @synthesize tag = _tag;
 @end
 
-napi_value setLayout(napi_env env, napi_callback_info info) {
+napi_value setWindowLayout(napi_env env, napi_callback_info info) {
 	napi_status status;
 
 	size_t argc = 4;
 	napi_value args[4];
 	status = napi_get_cb_info(env, info, &argc, args, 0, 0);
 	if (status != napi_ok) {
-		napi_throw_error(env, NULL, "setLayout(): failed to get arguments");
+		napi_throw_error(env, NULL, "setWindowLayout(): failed to get arguments");
 		return NULL;
 	} else if (argc < 3) {
-		napi_throw_error(env, NULL, "setLayout(): wrong number of arguments");
+		napi_throw_error(env, NULL, "setWindowLayout(): wrong number of arguments");
 		return NULL;
 	}
 
@@ -41,30 +41,30 @@ napi_value setLayout(napi_env env, napi_callback_info info) {
 	size_t windowBufferLength;
 	status = napi_get_buffer_info(env, args[0], &windowBuffer, &windowBufferLength);
 	if (status != napi_ok) {
-		napi_throw_error(env, NULL, "setLayout(): cannot read window handle");
+		napi_throw_error(env, NULL, "setWindowLayout(): cannot read window handle");
 		return NULL;
 	} else if (windowBufferLength == 0) {
-		napi_throw_error(env, NULL, "setLayout(): empty window handle");
+		napi_throw_error(env, NULL, "setWindowLayout(): empty window handle");
 		return NULL;
 	}
 
 	NSView *mainWindowView = *static_cast<NSView **>(windowBuffer);
 	if (![mainWindowView respondsToSelector:@selector(window)] || mainWindowView.window == nil) {
-		napi_throw_error(env, NULL, "setLayout(): NSView doesn't contain window");
+		napi_throw_error(env, NULL, "setWindowLayout(): NSView doesn't contain window");
 		return NULL;
 	}
 
 	int sidebarWidth;
 	status = napi_get_value_int32(env, args[1], &sidebarWidth);
 	if (status != napi_ok) {
-		napi_throw_error(env, NULL, "setLayout(): cannot read sidebarWidth from args");
+		napi_throw_error(env, NULL, "setWindowLayout(): cannot read sidebarWidth from args");
 		return NULL;
 	}
 
 	int titlebarHeight;
 	status = napi_get_value_int32(env, args[2], &titlebarHeight);
 	if (status != napi_ok) {
-		napi_throw_error(env, NULL, "setLayout(): cannot read titlebarHeight from args");
+		napi_throw_error(env, NULL, "setWindowLayout(): cannot read titlebarHeight from args");
 		return NULL;
 	}
 
@@ -72,7 +72,7 @@ napi_value setLayout(napi_env env, napi_callback_info info) {
 	if (argc >= 4) {
 		status = napi_get_value_int32(env, args[3], &titlebarMarginRight);
 		if (status != napi_ok) {
-			napi_throw_error(env, NULL, "setLayout(): cannot read titlebarMarginRight from args");
+			napi_throw_error(env, NULL, "setWindowLayout(): cannot read titlebarMarginRight from args");
 			return NULL;
 		}
 	}

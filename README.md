@@ -2,7 +2,7 @@
 
 > Create a native wallpaper-tinted window with a sidebar in [Electron](https://electronjs.org/) on macOS
 
-Electron BrowserWindow supports only one [`vibrancy` mode](https://www.electronjs.org/docs/latest/api/browser-window#winsetvibrancytype-macos) at a time, but standard macOS apps commonly have both a sidebar and main content area (often titlebar and inspector) that should be tinted based on the wallpaper on the user's desktop (macOS System Settings > Appearance > Allow wallpaper tinting in windows). The `setLayout` function adds [NSVisualEffectView](https://developer.apple.com/documentation/appkit/nsvisualeffectview?language=objc)s with the correct materials.
+Electron BrowserWindow supports only one [`vibrancy` mode](https://www.electronjs.org/docs/latest/api/browser-window#winsetvibrancytype-macos) at a time, but standard macOS apps commonly have both a sidebar and main content area (often titlebar and inspector) that should be tinted based on the wallpaper on the user's desktop (macOS System Settings > Appearance > Allow wallpaper tinting in windows). The `setWindowLayout` function adds [NSVisualEffectView](https://developer.apple.com/documentation/appkit/nsvisualeffectview?language=objc)s with the correct materials.
 
 The `setWindowAnimationBehavior` function enables you to configure a window to have the "zoom up" entrance animation.
 
@@ -16,7 +16,7 @@ https://github.com/davidcann/electron-tinted-with-sidebar/assets/23272/7cf04b0a-
 
 ## API
 
-**setLayout(nativeWindowHandle, sidebarWidth, titlebarHeight[, titlebarMarginRight])** (macOS only)
+**setWindowLayout(nativeWindowHandle, sidebarWidth, titlebarHeight[, titlebarMarginRight])** (macOS only)
 
 - `nativeWindowHandle` Buffer (NSView\*) from [BrowserWindow's win.getNativeWindowHandle()](https://www.electronjs.org/docs/latest/api/browser-window#wingetnativewindowhandle)
 - `sidebarWidth` integer
@@ -46,7 +46,7 @@ In main process:
     		vibrancy: "sidebar",
     	});
     	tint.setWindowAnimationBehavior(mainWindow.getNativeWindowHandle(), true);
-    	tint.setLayout(mainWindow.getNativeWindowHandle(), 200, 52);
+    	tint.setWindowLayout(mainWindow.getNativeWindowHandle(), 200, 52);
     	mainWindow.webContents.loadFile("index.html");
     }
 

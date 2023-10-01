@@ -57,7 +57,7 @@ function updateLayout() {
 	divider.style.left = `${sidebarWidth - 2}px`;
 	main.style.left = `${sidebarWidth + 0.5}px`;
 	titlebar.style.height = `${titlebarHeight}px`;
-	window.electronAPI.send("toMain", "setLayout", { sidebarWidth, titlebarHeight });
+	window.electronAPI.send("toMain", "setWindowLayout", { sidebarWidth, titlebarHeight });
 }
 
 function setTheme(themeSource) {
