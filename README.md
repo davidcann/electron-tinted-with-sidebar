@@ -4,7 +4,7 @@
 
 Electron BrowserWindow supports only one [`vibrancy` mode](https://www.electronjs.org/docs/latest/api/browser-window#winsetvibrancytype-macos) at a time, but standard macOS apps commonly have both a sidebar and main content area (often titlebar and inspector) that should be tinted based on the wallpaper on the user's desktop (macOS System Settings > Appearance > Allow wallpaper tinting in windows). The `setLayout` function adds [NSVisualEffectView](https://developer.apple.com/documentation/appkit/nsvisualeffectview?language=objc)s with the correct materials.
 
-The `setWindowAnimationBehavior`` function enables you to configure a window to have the "zoom up" entrance animation.
+The `setWindowAnimationBehavior` function enables you to configure a window to have the "zoom up" entrance animation.
 
 [See demo code](demo) for additional styling in HTML, such as the separator lines and subtle sidebar inner shadow. Dark mode is supported through macOS System Settings or [nativeTheme.themeSource](https://www.electronjs.org/docs/latest/api/native-theme#nativethemethemesource).
 
