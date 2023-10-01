@@ -1,0 +1,28 @@
+{
+	"name": "electron-tinted-with-sidebar",
+	"version": "1.0.0",
+	"description": "Create a native wallpaper-tinted window with a sidebar in Electron on macOS",
+	"main": "main.js",
+	"types": "types.d.ts",
+	"author": "David Cann <david@davidcann.com> (https://davidcann.com)",
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/davidcann/electron-tinted-with-sidebar.git"
+	},
+	"keywords": [
+		"electron",
+		"electronjs",
+		"nswindow",
+		"sidebar"
+	],
+	"bugs": {
+		"url": "https://github.com/davidcann/electron-tinted-with-sidebar/issues"
+	},
+	"homepage": "https://github.com/davidcann/electron-tinted-with-sidebar#readme",
+	"dependencies": {
+		"bindings": "^1.5.0"
+	},
+	"gypfile": true,
+	"type": "commonjs"
+}

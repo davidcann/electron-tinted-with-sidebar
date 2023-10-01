@@ -1,0 +1,253 @@
+body {
+	background-color: none;
+	color: rgb(0, 0, 0, 0.8);
+	font-family: -apple-system, BlinkMacSystemFont, sans-serif;
+	font-size: 12px;
+	user-select: none;
+}
+
+#dragRegion {
+	background: none;
+	height: 52px;
+	left: 0px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	-webkit-app-region: drag;
+}
+
+#sidebar {
+	inset: 0px;
+	position: absolute;
+}
+
+#sidebar .shadow {
+	background: linear-gradient(270deg, rgba(0, 0, 0, 0.03), rgba(0, 0, 0, 0));
+	bottom: 0px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+	width: 3px;
+}
+
+#dividerContainer {
+	background: rgb(255, 0, 0, 0);
+	bottom: 0px;
+	cursor: col-resize;
+	left: 0px;
+	position: absolute;
+	top: 0px;
+	width: 5px;
+	z-index: 1;
+}
+
+#dividerContainer .divider {
+	background: rgb(0, 0, 0, 0.17);
+	bottom: 0px;
+	left: 2px;
+	position: absolute;
+	top: 0px;
+	width: 0.5px;
+}
+
+#main {
+	inset: 0px;
+	position: absolute;
+}
+
+#titlebar {
+	align-items: center;
+	border-bottom: 0.5px solid rgb(0, 0, 0, 0.17);
+	display: flex;
+	height: 52px;
+	left: 0px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.title {
+	display: flex;
+	flex-direction: column;
+	gap: 3px;
+	justify-content: center;
+	margin-left: 12px;
+}
+
+h1,
+h2 {
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1em;
+	margin: 0px;
+	overflow: hidden;
+	padding: 0px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+
+h2 {
+	font-size: 12px;
+	font-weight: normal;
+	opacity: 0.6;
+}
+
+.windowInactive h1,
+.windowInactive h2 {
+	opacity: 0.33;
+}
+
+#main .content {
+	background: rgb(255, 255, 255, 1);
+	border-right: 0.5px solid rgb(0, 0, 0, 0.17);
+	bottom: 0px;
+	left: 0px;
+	position: absolute;
+	right: 240px;
+	top: 52.5px;
+}
+
+.subToolbar {
+	align-items: center;
+	border-bottom: 0.5px solid rgb(0, 0, 0, 0.17);
+	display: flex;
+	flex-direction: row;
+	font-size: 11px;
+	gap: 8px;
+	height: 28px;
+	justify-content: center;
+	left: 0px;
+	overflow: hidden;
+	padding: 0px 6px;
+	position: absolute;
+	right: 0px;
+	top: 0px;
+}
+
+.content p {
+	margin: 5px 0px;
+	padding-bottom: 0px;
+}
+
+.content .buttons {
+	display: flex;
+	flex-direction: row;
+}
+
+.windowInactive .content .buttons {
+	opacity: 0.5;
+}
+
+.content button {
+	background: none;
+	border-radius: 4px;
+	border: 0px;
+	color: rgb(0, 0, 0);
+	display: inline-block;
+	font-size: inherit;
+	margin: 0px;
+	padding-left: 0px;
+	padding: 4px 9px;
+}
+
+.content button:hover {
+	background: rgb(238, 238, 238);
+}
+
+.content button:active {
+	background: rgb(224, 224, 224);
+}
+
+.content button.selected {
+	background: rgb(224, 239, 255);
+	color: rgb(1, 123, 255);
+}
+
+#main .neutral {
+	align-items: center;
+	background: rgb(235, 235, 235);
+	border-radius: 6px;
+	border: 1px solid rgb(220, 220, 220);
+	display: flex;
+	font-size: 12px;
+	height: 70px;
+	justify-content: center;
+	position: absolute;
+	right: 40px;
+	top: 92px;
+	width: 160px;
+}
+
+.solidBackground #sidebar {
+	background: rgb(228, 228, 228);
+}
+
+.solidBackground #main {
+	background: rgb(240, 240, 240);
+}
+
+.solidBackground #titlebar {
+	background: rgb(248, 248, 248);
+}
+
+@media (prefers-color-scheme: dark) {
+	body,
+	.content button {
+		color: rgb(240, 240, 240);
+	}
+
+	#dividerContainer .divider {
+		background: rgb(0, 0, 0, 0.8);
+	}
+
+	#main .titlebar {
+		border-color: rgb(61, 61, 61);
+	}
+
+	h1,
+	h2 {
+		color: rgb(204, 204, 204);
+	}
+
+	#main .content {
+		background: rgb(0, 0, 0);
+	}
+
+	.subToolbar {
+		border-color: rgb(61, 61, 61);
+	}
+
+	.content button {
+		color: rgb(182, 182, 182);
+	}
+
+	.content button:hover {
+		background: rgb(74, 74, 74);
+	}
+
+	.content button:active {
+		background: rgb(94, 94, 94);
+	}
+
+	.content button.selected {
+		background: rgb(10, 90, 188);
+		color: rgb(188, 220, 255);
+	}
+
+	#main .neutral {
+		background: rgb(50, 50, 50);
+		border-color: rgb(20, 20, 20);
+	}
+
+	.solidBackground #sidebar {
+		background: rgb(43, 43, 43);
+	}
+
+	.solidBackground #main {
+		background: rgb(35, 35, 35);
+	}
+
+	.solidBackground #titlebar {
+		background: rgb(55, 55, 55);
+	}
+}

@@ -1,0 +1,15 @@
+{
+	"name": "demo",
+	"version": "1.0.0",
+	"description": "",
+	"main": "main.js",
+	"scripts": {
+		"start": "electron ."
+	},
+	"author": "David Cann <david@davidcann.com> (https://davidcann.com)",
+	"license": "MIT",
+	"dependencies": {
+		"electron": "^26.0.0"
+	},
+	"type": "commonjs"
+}
