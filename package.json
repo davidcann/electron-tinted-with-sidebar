@@ -14,7 +14,13 @@
 		"electron",
 		"electronjs",
 		"nswindow",
-		"sidebar"
+		"window",
+		"background",
+		"sidebar",
+		"wallpaper",
+		"tinted",
+		"macos",
+		"mac"
 	],
 	"bugs": {
 		"url": "https://github.com/davidcann/electron-tinted-with-sidebar/issues"
