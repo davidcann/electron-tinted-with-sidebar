@@ -9,7 +9,7 @@
 	"author": "David Cann <david@davidcann.com> (https://davidcann.com)",
 	"license": "MIT",
 	"dependencies": {
-		"electron": "^26.0.0"
+		"electron": "^30.0.0"
 	},
 	"type": "commonjs"
 }
