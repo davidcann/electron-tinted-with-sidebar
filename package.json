@@ -1,6 +1,6 @@
 {
 	"name": "electron-tinted-with-sidebar",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Create a native wallpaper-tinted window with a sidebar in Electron on macOS",
 	"main": "main.js",
 	"types": "types.d.ts",
