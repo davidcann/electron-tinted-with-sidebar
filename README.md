@@ -57,6 +57,7 @@ In main process:
 After cloning this repository, run:
 
     npm install
+    npm install --prefix demo/
     npm rebuild && npm start --prefix demo/
 
 ## License
