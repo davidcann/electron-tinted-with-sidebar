@@ -78,7 +78,14 @@ napi_value setWindowLayout(napi_env env, napi_callback_info info) {
 	}
 
 	NSWindow *window = mainWindowView.window;
-	NSView *view = window.contentView.subviews[1];
+	int viewIndex = 0;
+	for (int i = 0; i < [window.contentView.subviews count]; i++) {
+		NSView *testView = [window.contentView.subviews objectAtIndex:i];
+		if ([testView isKindOfClass:[NSVisualEffectView class]]) {
+			viewIndex = i;
+		}
+	}
+	NSView *view = window.contentView.subviews[viewIndex];
 
 	DCTaggedVisualEffectView *contentEffectView =
 	    (DCTaggedVisualEffectView *)[view viewWithTag:CONTENT_EFFECT_VIEW_TAG];
